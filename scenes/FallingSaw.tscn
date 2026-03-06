@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dr2kbmnpgm233"]
+
+[ext_resource type="Script" uid="uid://cdrmnsgjvttnr" path="res://scenes/falling_fish.gd" id="1_frowf"]
+[ext_resource type="Texture2D" uid="uid://gc3ephepjwha" path="res://assets/kenney_platformerpack/PNG/Enemies/saw_dead.png" id="1_xlo2r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frowf"]
+
+[node name="FallingSaw" type="RigidBody2D" unique_id=1606455538]
+script = ExtResource("1_frowf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=110605878]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xlo2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=281107574]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_frowf")

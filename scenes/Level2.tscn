@@ -1,0 +1,146 @@
+[gd_scene format=4 uid="uid://dyg3yqhjwuwxo"]
+
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_qwp14"]
+[ext_resource type="Texture2D" uid="uid://u88hhr5x2oco" path="res://assets/kenney_platformerpack/PNG/Tiles/lava.png" id="2_xpq2v"]
+[ext_resource type="Texture2D" uid="uid://dd081xb1oy7s" path="res://assets/kenney_platformerpack/PNG/Tiles/water.png" id="3_0jmjk"]
+[ext_resource type="Texture2D" uid="uid://p846j0vameom" path="res://assets/kenney_platformerpack/PNG/Tiles/brickGrey.png" id="4_v8268"]
+[ext_resource type="Texture2D" uid="uid://1cmkdw30hlrq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_snow.png" id="5_rcugv"]
+[ext_resource type="Script" uid="uid://byacj8fdw3hvr" path="res://scenes/portalwin.gd" id="6_xpq2v"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="7_khw7m"]
+[ext_resource type="Script" uid="uid://dgbrvitgv3ka" path="res://scenes/outof_bounds.gd" id="8_0jmjk"]
+[ext_resource type="Script" uid="uid://bksm3gl0rwsgo" path="res://scenes/Spawner.gd" id="9_v8268"]
+[ext_resource type="PackedScene" uid="uid://dr2kbmnpgm233" path="res://scenes/FallingSaw.tscn" id="10_v8268"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wd6ad"]
+texture = ExtResource("2_xpq2v")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -17.049995, 64, -19.799995, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cd1f0"]
+texture = ExtResource("3_0jmjk")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -17.049995, 64, -19.799995, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k83s3"]
+texture = ExtResource("4_v8268")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jdof"]
+texture = ExtResource("5_rcugv")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -64, 64, -64, 64, 64, -64, 64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_rfxww"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wd6ad")
+sources/1 = SubResource("TileSetAtlasSource_cd1f0")
+sources/2 = SubResource("TileSetAtlasSource_k83s3")
+sources/4 = SubResource("TileSetAtlasSource_2jdof")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ax8h"]
+size = Vector2(301, 485)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpq2v"]
+size = Vector2(3840, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcugv"]
+size = Vector2(896, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aekd"]
+size = Vector2(256, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khw7m"]
+size = Vector2(128, 96)
+
+[node name="Level2" type="Node2D" unique_id=280846493]
+
+[node name="Player" parent="." unique_id=845254075 instance=ExtResource("1_qwp14")]
+position = Vector2(445, 209)
+collision_layer = 3
+collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=392445692]
+z_index = -5
+tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAAABAAgAAQAAAAAAAAACAAgAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAgABAAAAAAAAAAIAAgABAAAAAAAAAAJAAgABAABAAAAAAAJAAcABAAAAAAAAAAKAAcABAABAAAAAAAKAAYABAAAAAAAAAALAAYABAAAAAAAAAAMAAYABAAEAAEAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAAMAAcABAABAAAAAAANAAgABAABAAAAAAAOAAgABAABAAAAAAAPAAgABAAAAAAAAAAQAAgABAABAAAAAAAQAAcABAAAAAAAAAARAAcABAABAAAAAAARAAYABAAAAAAAAAASAAYABAAEAAEAAAASAAcABAABAAAAAAATAAcABAAAAAAAAAATAAgABAABAAAAAAARAAgABAABAAAAAAASAAgABAABAAAAAAAMAAgABAABAAAAAAALAAgABAABAAAAAAAKAAgABAABAAAAAAALAAcABAABAAAAAAAUAAcABAAEAAEAAAAVAAgABAAEAAEAAAAUAAgABAACAAAAAAAPAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAkABAABAAAAAAAIAAkABAABAAAAAAAJAAkABAABAAAAAAAKAAkABAABAAAAAAAMAAkABAABAAAAAAANAAkABAABAAAAAAAOAAkABAABAAAAAAAPAAkABAABAAAAAAAQAAkABAABAAAAAAARAAkABAABAAAAAAASAAkABAABAAAAAAATAAkABAABAAAAAAAUAAkABAABAAAAAAAVAAkABAABAAAAAAALAAkABAABAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAYAAkABAABAAAAAAAYAAgABAABAAAAAAAYAAcABAABAAAAAAAYAAYABAABAAAAAAAYAAUABAABAAAAAAAYAAQABAABAAAAAAAYAAMABAABAAAAAAAVAAMABAAGAAAAAAARAAMABAABAAAAAAAQAAMABAABAAAAAAAPAAMABAABAAAAAAAOAAMABAABAAAAAAANAAMABAABAAAAAAAMAAMABAABAAAAAAALAAMABAABAAAAAAAKAAMABAABAAAAAAAJAAMABAABAAAAAAAIAAMABAABAAAAAAAHAAMABAABAAAAAAAGAAMABAABAAAAAAAFAAMABAABAAAAAAAEAAMABAABAAAAAAADAAMABAABAAAAAAACAAMABAABAAAAAAABAAMABAABAAAAAAAAAAMABAABAAAAAAAAAAIABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAGAAIABAAAAAAAAAAHAAIABAAAAAAAAAAIAAIABAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIABAAAAAAAAAARAAIABAAEAAEAAAAYAAIABAAAAAAAAAAFAAEABAAFAAEAAAAGAAAABAAFAAEAAAAGAAEABAABAAAAAAAHAAAABAAGAAEAAAAIAAAABAAEAAAAAAALAAEABAAAAAEAAAANAAEABAAAAAEAAAAPAAEABAAAAAEAAAASAAMABAAHAAEAAAATAAMABAAHAAEAAAAUAAMABAAHAAEAAAA=")
+tile_set = SubResource("TileSet_rfxww")
+
+[node name="PortalNaikLevel" type="Area2D" parent="." unique_id=843300487]
+position = Vector2(434, 900)
+script = ExtResource("6_xpq2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalNaikLevel" unique_id=1157369308]
+shape = SubResource("RectangleShape2D_2ax8h")
+
+[node name="Sprite2D" type="Sprite2D" parent="PortalNaikLevel" unique_id=425058000]
+texture = ExtResource("7_khw7m")
+
+[node name="OutofBounds" type="Area2D" parent="." unique_id=225622957]
+script = ExtResource("8_0jmjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutofBounds" unique_id=1502877726]
+position = Vector2(1622, 1573)
+shape = SubResource("RectangleShape2D_xpq2v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OutofBounds" unique_id=1967593838]
+position = Vector2(1600, 322)
+shape = SubResource("RectangleShape2D_rcugv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OutofBounds" unique_id=1162169292]
+position = Vector2(1025, 959)
+shape = SubResource("RectangleShape2D_3aekd")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="OutofBounds" unique_id=1083988380]
+position = Vector2(2944, 1213)
+shape = SubResource("RectangleShape2D_3aekd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="OutofBounds" unique_id=1512560800]
+position = Vector2(1984, 957)
+shape = SubResource("RectangleShape2D_khw7m")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=637030391]
+position = Vector2(693, -183)
+script = ExtResource("9_v8268")
+obstacle = ExtResource("10_v8268")
+
+[connection signal="body_entered" from="PortalNaikLevel" to="PortalNaikLevel" method="_on_Area_Trigger_body_entered"]
+[connection signal="body_entered" from="OutofBounds" to="OutofBounds" method="_on_Area_Trigger_body_entered"]

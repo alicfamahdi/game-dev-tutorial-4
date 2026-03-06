@@ -1,10 +1,133 @@
-[gd_scene load_steps=2 format=3 uid="uid://yqmk0vpvnyxr"]
+[gd_scene format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://u88hhr5x2oco" path="res://assets/kenney_platformerpack/PNG/Tiles/lava.png" id="2_lrl65"]
+[ext_resource type="Texture2D" uid="uid://dd081xb1oy7s" path="res://assets/kenney_platformerpack/PNG/Tiles/water.png" id="3_76388"]
+[ext_resource type="Texture2D" uid="uid://p846j0vameom" path="res://assets/kenney_platformerpack/PNG/Tiles/brickGrey.png" id="4_svatc"]
+[ext_resource type="Texture2D" uid="uid://1cmkdw30hlrq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_snow.png" id="5_ecr63"]
+[ext_resource type="Script" uid="uid://gt2lva1rhb5f" path="res://scenes/portalnaiklevel.gd" id="6_76388"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="7_svatc"]
+[ext_resource type="Script" uid="uid://dgbrvitgv3ka" path="res://scenes/outof_bounds.gd" id="8_ecr63"]
+[ext_resource type="Script" uid="uid://bksm3gl0rwsgo" path="res://scenes/Spawner.gd" id="9_kbo48"]
+[ext_resource type="PackedScene" uid="uid://b118pvmscylk6" path="res://scenes/FallingFish.tscn" id="10_kbo48"]
+[ext_resource type="Texture2D" uid="uid://ba514qv42rb8j" path="res://assets/snowy-background-zun3wd8hp6w10dwi.jpg" id="11_4dyl1"]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecr63"]
+texture = ExtResource("2_lrl65")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -17.049995, 64, -19.799995, 64, 64, -64, 64)
 
-[node name="Player" parent="." instance=ExtResource("1")]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n34uq"]
+texture = ExtResource("3_76388")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -17.049995, 64, -19.799995, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbo48"]
+texture = ExtResource("4_svatc")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dyl1"]
+texture = ExtResource("5_ecr63")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -64, 64, -64, 64, 64, -64, 64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_2meft"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ecr63")
+sources/1 = SubResource("TileSetAtlasSource_n34uq")
+sources/2 = SubResource("TileSetAtlasSource_kbo48")
+sources/4 = SubResource("TileSetAtlasSource_4dyl1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svatc"]
+size = Vector2(301, 485)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n34uq"]
+size = Vector2(3840, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecr63"]
+size = Vector2(256, 96)
+
+[node name="Level1" type="Node2D" unique_id=1937089294]
+
+[node name="Player" parent="." unique_id=20785672 instance=ExtResource("1")]
 position = Vector2(445, 209)
 collision_layer = 3
 collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=629915771]
+z_index = -5
+tile_map_data = PackedByteArray("AAABAAIABAAIAAEAAAACAAIABAAIAAEAAAADAAIABAAIAAEAAAAEAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAIAAgAAAAAAAAAHAAIAAAAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAAHAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAMAAgAAAAAAAAALAAMAAgAAAAAAAAAMAAMAAgAAAAAAAAAMAAIAAQAAAAAAAAANAAMAAgAAAAAAAAALAAIAAQAAAAAAAAAAAAIABAAIAAEAAAAPAAMABAAGAAEAAAAQAAMABAAGAAEAAAARAAIABAAFAAEAAAASAAIABAAGAAEAAAATAAIAAAAAAAAAAAARAAMABAACAAAAAAASAAMABAACAAAAAAATAAMABAACAAAAAAAUAAIAAAAAAAAAAAAVAAIABAAHAAEAAAAXAAIAAQAAAAAAAAAWAAMAAQAAAAAAAAAWAAIABAAHAAEAAAAVAAMAAgAAAAAAAAAUAAMAAgAAAAAAAAAXAAMAAQAAAAAAAAAYAAMAAQAAAAAAAAAYAAIAAQAAAAAAAAANAAIABAAIAAEAAAAZAAIAAQAAAAAAAAAZAAMAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_2meft")
+
+[node name="PortalNaikLevel" type="Area2D" parent="." unique_id=987191944]
+position = Vector2(3140, 80)
+script = ExtResource("6_76388")
+
+[node name="Sprite2D" type="Sprite2D" parent="PortalNaikLevel" unique_id=1083168863]
+texture = ExtResource("7_svatc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalNaikLevel" unique_id=237688873]
+shape = SubResource("RectangleShape2D_svatc")
+
+[node name="OutofBounds" type="Area2D" parent="." unique_id=1139900938]
+position = Vector2(1619, 738)
+script = ExtResource("8_ecr63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutofBounds" unique_id=20012253]
+shape = SubResource("RectangleShape2D_n34uq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OutofBounds" unique_id=703495694]
+position = Vector2(-595, -421)
+shape = SubResource("RectangleShape2D_ecr63")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="OutofBounds" unique_id=1357917291]
+position = Vector2(941, -422)
+shape = SubResource("RectangleShape2D_ecr63")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=480065106]
+position = Vector2(247, -177)
+script = ExtResource("9_kbo48")
+obstacle = ExtResource("10_kbo48")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1531159758]
+z_index = -10
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=738086731]
+position = Vector2(1017.49994, 93.00004)
+scale = Vector2(1.737857, 1.2319999)
+texture = ExtResource("11_4dyl1")
+
+[connection signal="body_entered" from="PortalNaikLevel" to="PortalNaikLevel" method="_on_Area_Trigger_body_entered"]
+[connection signal="body_entered" from="OutofBounds" to="OutofBounds" method="_on_Area_Trigger_body_entered"]
